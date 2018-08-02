@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+%sp-test_imgs {    
+    /*background: url('../images/sprite//sp-test_imgs.png?v=#{timestamp()}') no-repeat;*/
+    background: url('../images/sprite//sp-test_imgs.png') no-repeat;
+    display: inline-block;
+    overflow: hidden;
+}
+
+@mixin sp-test_imgs($filename, $padding-top:0, $padding-right:0, $padding-bottom:0, $padding-left:0){
+	$dimension-map: map-get($sp-test_imgs, $filename);
+    @extend %sp-test_imgs;
+	@include sp-mosaic($dimension-map, $filename, $padding-top, $padding-right, $padding-bottom, $padding-left);
+}
+
+$sp-test_imgs: (
+    spritesheet_name: sp-test_imgs,
+    camera: (offset_x: 0, offset_y: 0, width: 128px, height: 128px),
+    facebook: (offset_x: -132px, offset_y: 0, width: 128px, height: 128px),
+    twitter: (offset_x: 0, offset_y: -132px, width: 128px, height: 128px),
+    video: (offset_x: -132px, offset_y: -132px, width: 128px, height: 128px),
+    wifi: (offset_x: -264px, offset_y: 0, width: 128px, height: 128px),
+);

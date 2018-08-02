@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+// reset
+@mixin reset-box-model{
+	margin:0;
+	padding:0;
+}
+// :after box setting
+@mixin after{
+	*zoom:1;
+	&:after{
+		display:block;
+		clear:both;
+		content:'';
+	}
+}
+// size
+@mixin size($width:100%, $height:100%){
+	width:$width;
+	height:$height;
+}
+// opacity
+@mixin opacity($value:1){
+	opacity:$value;
+	filter:alpha(opacity=$value*100); // ie opacity
+}
+// text mixins
+@mixin txt-hide-inline($width, $height, $valign:middle){
+	display:inline-block;
+	overflow:hidden;
+	width:#{$width};
+	height:#{$height};
+	line-height:100em;
+	vertical-align:$valign;
+}
+@mixin txt-hide-with-sprite(){
+	overflow:hidden;
+	line-height:100em;
+	vertical-align:top;
+}
+@mixin ellipsis($width:100%){
+	overflow:hidden;
+	width:$width;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+@mixin clear-ellipsis($width:100%){
+    overflow:hidden;
+    width:$width;
+    white-space:normal;
+    text-overflow: initial;
+}
+// posiiton
+@mixin position($position, $top:null, $right:null, $bottom:null, $left:null){
+	position:$position;
+	top:$top;
+	right:$right;
+	bottom:$bottom;
+	left:$left;
+}
+// .sample{
+// 	@include position(absolute, 10px, null, null, 30px);
+// 	@include position(relative, 10px);
+// }
+
+// property type selectors
+@mixin ip-txt-pw{
+	input[type="text"], input[type="password"]{
+		@content;
+	}
+}
+@mixin ip-chk-rdo{
+	input[type="checkbox"], input[type="radio"]{
+		@content;
+	}
+}
+// hack
+@mixin ie7-inline-block{
+	*+html &{
+		display:inline;
+		zoom:1;
+		@content;
+	}
+}
+@mixin ie8{
+	@media \0screen{
+		&{
+			@content;
+		}
+	}
+}
+@mixin chrome{
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		&{@content;}
+	}
+}
+// ipad
+@mixin ipad{
+	@media only screen and (min-device-width:768px) and (max-device-width:1024px){
+		@content;
+	}
+}
+// ie scroll
+@mixin ie-scroll($face, $track, $arrow, $highlight, $dlight, $shadow, $darkshadow){
+	scrollbar-face-color:$face;
+	scrollbar-track-color:$track;
+	scrollbar-arrow-color:$arrow;
+	scrollbar-highlight-color:$highlight; // top,left in border
+	scrollbar-3dlight-color:$dlight; // top, left out border
+	scrollbar-shadow-color:$shadow; // right, bottom in border
+	scrollbar-darkshadow-color:$darkshadow; // right, bottom out border
+}
+// vendorize
+@mixin vendorize($property, $value){
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+// class numbering css style
+@mixin numbering-style($class-name, $values...){
+	$n: 1;
+	$var: $class-name + $n;
+	@each $property, $value, $property2, $value2, $property3, $value3, $property4, $value4, $property5, $value5, $property6, $value6, $property7, $value7 in $values{
+		#{$var}{
+			#{$property}:#{$value};
+			#{$property2}:#{$value2};
+			#{$property3}:#{$value3};
+			#{$property4}:#{$value4};
+			#{$property5}:#{$value5};
+			#{$property6}:#{$value6};
+			#{$property7}:#{$value7};
+		}
+		$n: $n + 1;
+		$var: $class-name + $n;
+	}
+}
+// .sample{
+// 	@include numbering-style(".ico", // class name
+// 		width 20px background-position "20px 30px" border "3px solid red",	// ico1
+// 		width 40px height 50px) // ico2
+// }
+@mixin numbering-style1($class-name, $property, $values...){
+	$n: 1;
+	$var: $class-name + $n;
+	@each $value in $values{
+		#{$var}{
+			#{$property}:#{$value};
+		}
+		$n: $n + 1;
+		$var: $class-name + $n;
+	}
+}
+@mixin numbering-style2($class-name, $property, $property2, $values...){
+	$n: 1;
+	$var: $class-name + $n;
+	@each $value, $value2 in $values{
+		#{$var}{
+			#{$property}:#{$value};
+			#{$property2}:#{$value2};
+		}
+		$n: $n + 1;
+		$var: $class-name + $n;
+	}
+}
+@mixin numbering-style3($class-name, $property, $property2, $property3, $values...){
+	$n: 1;
+	$var: $class-name + $n;
+	@each $value, $value2, $value3 in $values{
+		#{$var}{
+			#{$property}:#{$value};
+			#{$property2}:#{$value2};
+			#{$property3}:#{$value3};
+		}
+		$n: $n + 1;
+		$var: $class-name + $n;
+	}
+}
+@mixin numbering-style4($class-name, $property, $property2, $property3, $property4, $values...){
+	$n: 1;
+	$var: $class-name + $n;
+	@each $value, $value2, $value3, $value4 in $values{
+		#{$var}{
+			#{$property}:#{$value};
+			#{$property2}:#{$value2};
+			#{$property3}:#{$value3};
+			#{$property4}:#{$value4};
+		}
+		$n: $n + 1;
+		$var: $class-name + $n;
+	}
+}
+@mixin ir{
+  overflow: hidden;
+  line-height: 999px;
+  color: transparent;
+  font-size: 0;
+  vertical-align: top;
+}
+// .sample{
+// 	@include numbering-style4(".ico", // class name
+// 		top, left, width, height, // propertys
+// 		10px 10px 10px 10px, // ico1
+// 		20px 20px 20px 20px, // ico2
+// 		30px 30px 30px 30px, // ico3
+// 		40px 40px 40px 40px) // ico4
+// }

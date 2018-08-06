@@ -1,4 +1,26 @@
-@charset 'UTF-8' ; 
+@charset 'UTF-8' ;
 @import './ui/layout';
+@import './ui/mixins/sprite-mixins';
+@import './ui/sprite/sp-icon_sns';
 
 body { 	font-family: 'Helvetica Neue' , Helvetica , Arial , sans-serif ;}
+
+.snsWrap{
+	.btn{
+		display: inline-block;
+		margin:0 2px;
+		font-size:0;
+		&.fb{
+			@include sp-icon_sns(ic_fb) ;
+		}
+		&.tw{
+			@include sp-icon_sns(ic_tw) ;
+		}
+		&.gp{
+			@include sp-icon_sns(ic_gp) ;
+		}
+		&.nb{
+			@include sp-icon_sns(ic_nb) ;
+		}
+	}
+}

@@ -1,28 +1,33 @@
 class ShareControl{
 	constructor() {
 
-		this.pageInfo = {
+		this.state = {
 			url : document.URL ,
 			title : document.title
 		}
 
-		console.log('URL :', this.pageInfo.url )
-		console.log('Title :', this.pageInfo.title )
+		// console.log('URL :', this.state.url )
+		// console.log('Title :', this.state.title )
 	}
 
 	faceBook() {
-		console.log( '페이스북 공유 스크립트 실행!' ) ;
+		console.log( '페이스북 공유 실행!' ) ;
+		let url = "http://www.facebook.com/sharer.php?u=" + encodeURIComponent(this.state.url) + "&t=" + encodeURIComponent(this.state.title);
+		this.windowOpen(url, 900, 450, 'no');
+
 	}
 	twitter() {
-		console.log( '트위터 공유 스크립트 실행!' ) ;
-		window.open(
-			'https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20'
-			+ encodeURIComponent(this.pageInfo.url)
-			+'%20-%20'
-			+encodeURIComponent(this.pageInfo.title),
-			'twittersharedialog',
-			'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600'
-		);
+		console.log( '트위터 공유 실행!' ) ;
+		let url = "http://twitter.com/share?text=" + encodeURIComponent(this.state.title) + "&url=" + encodeURIComponent(this.state.url);
+		this.windowOpen (url, 800, 400, 'yes');
+	}
+
+
+	windowOpen = ( ...args ) => {
+		let [ url, w, h, scroll ] = args;
+		console.log( url , w, h, scroll ) ;
+		window.open(url, "left=0,top=0,width="+w+",height="+h+",scrollbars="+scroll+",toolbar=no,location=no,directories=no,status=no,menubar=no,resizable=no");
+
 	}
 
 

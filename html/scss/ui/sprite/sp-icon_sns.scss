@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+%sp-icon_sns {    
+    /*background: url('../images/sprite//sp-icon_sns.png?v=#{timestamp()}') no-repeat;*/
+    background: url('../images/sprite//sp-icon_sns.png') no-repeat;
+    display: inline-block;
+    overflow: hidden;
+}
+
+@mixin sp-icon_sns($filename, $padding-top:0, $padding-right:0, $padding-bottom:0, $padding-left:0){
+	$dimension-map: map-get($sp-icon_sns, $filename);
+    @extend %sp-icon_sns;
+	@include sp-mosaic($dimension-map, $filename, $padding-top, $padding-right, $padding-bottom, $padding-left);
+}
+
+$sp-icon_sns: (
+    spritesheet_name: sp-icon_sns,
+    ic_fb: (offset_x: 0, offset_y: 0, width: 40px, height: 40px),
+    ic_gp: (offset_x: -44px, offset_y: 0, width: 40px, height: 40px),
+    ic_nb: (offset_x: 0, offset_y: -44px, width: 40px, height: 40px),
+    ic_tw: (offset_x: -44px, offset_y: -44px, width: 40px, height: 40px),
+);

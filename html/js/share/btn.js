@@ -7,13 +7,13 @@ class Btn extends Component {
 	constructor( props ){
 		super( props ) ;
 		this.state = {
-			btns : this.props.options
+			btn : this.props.options
 		}
 	}
 	render(){
-		let opts = this.state.btns ;
+		let btn = this.state.btn ;
 		return(
-			<button type="button" className={opts.class} onClick={opts.clickHandler}>{opts.label}</button>
+			<button type="button" className={btn.class} onClick={btn.clickHandler}>{btn.label}</button>
 		)
 	}
 }

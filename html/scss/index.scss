@@ -5,11 +5,30 @@
 
 body { 	font-family: 'Helvetica Neue' , Helvetica , Arial , sans-serif ;}
 
+.wrap{
+	padding:30px;
+	&:after{
+		content:"";
+		display: block;
+		clear:both;
+	}
+}
+
 .snsWrap{
+	position:relative;
+	float:right;
+	border:1px solid blue;
+	.btn_area{
+		// position:absolute;
+		// right:30px;
+		// top:0;
+		// border:1px solid blue;
+	}
 	.btn{
 		display: inline-block;
 		margin:0 2px;
 		font-size:0;
+		box-sizing:border-box;
 		&.fb{
 			@include sp-icon_sns(ic_fb) ;
 		}
@@ -21,6 +40,16 @@ body { 	font-family: 'Helvetica Neue' , Helvetica , Arial , sans-serif ;}
 		}
 		&.nb{
 			@include sp-icon_sns(ic_nb) ;
+		}
+		&.uc{
+			width:40px;
+			height:40px;
+			border:1px solid #666;
+			color:#666;
+			border-radius: 50%;
+			text-align: center;
+			font-size:12px;
+			letter-spacing: -.5px;
 		}
 	}
 }

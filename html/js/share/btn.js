@@ -9,11 +9,18 @@ class Btn extends Component {
 		this.state = {
 			btn : this.props.options
 		}
+		console.log( this.state.btn ) ;
 	}
 	render(){
+
 		let btn = this.state.btn ;
+		let sns_icon = <i className="icon" dangerouslySetInnerHTML={{ __html : btn.icon }} /> ;
+
 		return(
-			<button type="button" className={btn.class} onClick={btn.clickHandler}>{btn.label}</button>
+			<button type="button" className={btn.class} onClick={btn.clickHandler}>
+				{sns_icon}
+				{btn.label}
+			</button>
 		)
 	}
 }

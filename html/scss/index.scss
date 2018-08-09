@@ -5,16 +5,7 @@
 
 body { 	font-family: 'Helvetica Neue' , Helvetica , Arial , sans-serif ;}
 
-.wrap{
-	padding:30px;
-	// &:after{
-	// 	content:"";
-	// 	display: block;
-	// 	clear:both;
-	// }
-}
-
-.snsWrap{
+.share{
 	position:relative;
 	// float:right;
 	.btn{
@@ -45,27 +36,22 @@ body { 	font-family: 'Helvetica Neue' , Helvetica , Arial , sans-serif ;}
 		&:last-child{
 			margin-right: 0;
 		}
-		/* &.fb{
-			@include sp-icon_sns(ic_fb) ;
-		}
-		&.tw{
-			@include sp-icon_sns(ic_tw) ;
-		}
-		&.gp{
-			@include sp-icon_sns(ic_gp) ;
-		} */
 		&.nb{
-			@include sp-icon_sns(ic_nb) ;
+			@include sp-icon_sns(ic_nb30) ;
 		}
 		&.uc{
-			width:40px;
-			height:40px;
-			border:1px solid #666;
-			color:#666;
-			border-radius: 50%;
+			width:auto;
+			height:30px;
+			line-height: 30px;
+			padding:0 10px;
+			border:1px solid #a0a0a0;
+			background-color:#fff;
+			color:#545454;
+			border-radius:15px;
 			text-align: center;
 			font-size:12px;
 			letter-spacing: -.5px;
+
 		}
 	}
 }

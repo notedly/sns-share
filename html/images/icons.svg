@@ -3,7 +3,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
 
-	<symbol id="icon-facebook" viewBox="0 0 32 32">
+	<symbol id="icon-facebook" viewBox="0 0 474.294 474.294">
 	   <title>facebook</title>
 	   <circle style="fill:#3A5A98;" cx="237.111" cy="236.966" r="236.966"/>
 		<path style="fill:#345387;" d="M404.742,69.754c92.541,92.541,92.545,242.586-0.004,335.134
@@ -16,7 +16,7 @@
 			z"/>
 	</symbol>
 
-	<symbol id="icon-twitter" viewBox="0 0 32 32">
+	<symbol id="icon-twitter" viewBox="0 0 474.006 474.006">
 		<title>twitter</title>
 		<circle style="fill:#13B3CA;" cx="237.003" cy="237.003" r="237.003"/>
 		<path style="fill:#10ABB6;" d="M404.567,69.421c92.545,92.541,92.552,242.59-0.004,335.142
@@ -36,7 +36,7 @@
 			C396.817,232.674,379.609,230.593,370.487,226.792z"/>
 	</symbol>
 
-	<symbol id="icon-google-plus" viewBox="0 0 32 32">
+	<symbol id="icon-google-plus" viewBox="0 0 473.939 473.939">
 		<title>google-plus</title>
 		<circle style="fill:#CC3731;" cx="236.969" cy="236.967" r="236.967"/>
 		<path style="fill:#BC2B2A;" d="M404.527,69.384c92.542,92.542,92.546,242.588-0.004,335.137

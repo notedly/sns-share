@@ -22,6 +22,14 @@ class ShareContainer extends Component {
 		@btns : 공유 버튼들 모음
 		*/
 		this.share = new Share ;
+
+		/**
+		@type : 공유 버튼 타입
+		@label : 버튼 태그 텍스트 콘텐츠
+		@class : 버튼 클래스
+		@icon : 버튼 svg 아이콘
+		@clickHandler : 버튼 클릭 이벤트
+		*/
 		this.btns = [
 			{
 				type : 'facebook' ,
@@ -79,6 +87,8 @@ class ShareContainer extends Component {
 	}
 
 	render(){
+
+		/* 버튼 생성 함수 */
 		let makeSnsBtn = ( btn , idx ) => {
 			let snsProps = {
 				key : `btn${idx}` ,
@@ -92,6 +102,7 @@ class ShareContainer extends Component {
 			}
 			return <Btn {...snsProps} />
 		}
+
 		return(
 			<div className="share">
 				<div className="btn_area">

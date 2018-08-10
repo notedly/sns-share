@@ -14,6 +14,7 @@ class Btn extends Component {
 		let btn = this.state.btn
 		,	 sns_icon = null ;
 
+		/* svg 아이콘을 전달 받았을 경우에만 노출됩니다. */
 		if ( btn.icon != undefined || btn.icon != null ) {
 			sns_icon = <i className="icon" dangerouslySetInnerHTML={{ __html : btn.icon }} /> ;
 		}
